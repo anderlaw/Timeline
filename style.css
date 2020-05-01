@@ -1,0 +1,115 @@
+/* reset style */
+h3,p{
+  margin: 0;
+}
+.container{
+  width:500px;
+  position: relative;
+}
+.container::before{
+  content:'';
+  position: absolute;
+  top:0;
+  bottom:0;
+  width:10px;
+  left:50%;
+  background-color: #e9e9e9;
+  transform: translate(-50%);
+}
+.container .year{
+  position: relative;
+  left:50%;
+  width:100px;
+  height:30px;
+  line-height: 30px;
+  background-color: #f35800;
+  color:white;
+  text-align: center;
+  border-radius:4px;
+  transform:translate(-50%);
+  margin:10px 0;
+}
+.event-box{
+  display: flex;
+  align-items: center;
+  position: relative;
+  z-index:1;
+  margin-bottom:20px;
+}
+.event-box:nth-of-type(odd){
+  flex-direction: row;
+}
+.event-box:nth-of-type(even){
+  flex-direction: row-reverse;
+}
+.event-box .left-part{
+  width: calc(50% - 8px);
+  box-sizing: border-box;
+}
+.event-box .circle-part{
+  width: 16px;
+  height: 16px;
+  border-radius:50%;
+  background-color: #f35800;
+}
+.event-box .right-part{
+  width:calc(50% - 8px);
+  box-sizing: border-box;
+}
+.event-box .left-part .title{
+  font-size:18px;
+}
+.event-box .left-part p{
+  font-size:14px;
+}
+.event-box .wrapper{
+  padding:10px;
+  border-radius:4px;
+  border:1px solid #ccc;
+  position: relative;
+}
+.event-box .arrow-box{
+  position: absolute;
+}
+.event-box .arrow{
+  width: 16px;
+  height: 16px;
+  border:1px solid #ccc;
+  transform: rotate(45deg);
+  background-color: white;
+}
+.event-box:nth-of-type(odd) .wrapper{
+  margin-right:40px;
+  
+}
+.event-box:nth-of-type(odd) .arrow{
+  border-left:none;
+  border-bottom:none;
+}
+.event-box:nth-of-type(odd) .arrow-box{
+  left:100%;
+  top:50%;
+  transform: translate(-50%,-50%);
+}
+.event-box:nth-of-type(odd) .right-part{
+  padding-left:40px;
+}
+
+/* even indexed event style */
+
+.event-box:nth-of-type(even) .wrapper{
+  margin-left:40px;
+}
+.event-box:nth-of-type(even) .arrow{
+  border-right:none;
+  border-top:none;
+}
+.event-box:nth-of-type(even) .arrow-box{
+  left:0%;
+  top:50%;
+  transform: translate(-50%,-50%);
+}
+.event-box:nth-of-type(even) .right-part{
+  padding-right:40px;
+  text-align: right;
+}
